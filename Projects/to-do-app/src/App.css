@@ -1,0 +1,22 @@
+h1 {
+  font-weight: 700;
+  font-size: 40px;
+  margin: 45px;
+}
+
+input {
+  width: 100%;
+}
+
+.item-container{
+    text-align: left;
+}
+
+.dev-row{
+    margin: 10px 5px;
+}
+
+
+.dev-button{
+    min-width: 100%;
+}
