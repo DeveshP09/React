@@ -1,0 +1,18 @@
+body{
+  margin: 80px;
+}
+
+input {
+  width: 100%;
+}
+
+
+
+.dev-row{
+    margin: 10px 5px;
+}
+
+
+.dev-button{
+    min-width: 100%;
+}
