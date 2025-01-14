@@ -10,7 +10,10 @@ const postListReducer = (currPostList, action) => {
 
     let newPostList = currPostList;
     if(action.type === "DELETE_POST"){
-        newPostList = currPostList.filter((post) => post.id !== action.payload.postId)
+      newPostList = currPostList.filter((post) => post.id !== action.payload.postId)
+    }
+    else if(action.type === "ADD_POST"){
+      newPostList = [action.payload ,...currPostList ] ;      // to add new post in existing post arry ,using spread operator
     }
 
   return newPostList;
@@ -22,7 +25,19 @@ const PostListProvider = ({ children }) => {
     DEFAULT_POST_LIST
   );
 
-  const addPost = () => {};
+  const addPost = (userId, postTitle, postBody, reactions, tags) => {
+    dispatchPostList({
+      type : "ADD_POST",
+      payload : {
+        id: Date.now(), //to generate a random id ,in a form of time when it is post
+        title: postTitle,
+        body: postBody,
+        reaction: reactions,
+        userId: userId,
+        tags: tags,
+      }
+    })
+  };
 
   const deletePost = (postId) => {
     dispatchPostList({
@@ -43,11 +58,11 @@ const PostListProvider = ({ children }) => {
 const DEFAULT_POST_LIST = [
   {
     id: "1",
-    title: "going to mumbai",
-    body: "Hii friends ,I am going to mumbai for my vacation, hope enjoy a lot",
+    title: "Going to kashmir",
+    body: "Hii friends ,I am going to kashmir for my vacation, hope enjoy a lot",
     reaction: 2,
     userId: "user-9",
-    tags: ["vacation", "mumbai", "enjoy"],
+    tags: ["vacation", "kashmir", "enjoy"],
   },
   {
     id: "2",

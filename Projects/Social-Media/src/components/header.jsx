@@ -26,12 +26,12 @@ const Header = () => {
             </li>
             <li>
               <a href="#" className="nav-link px-2 text-white">
-                Features
+                Reels
               </a>
             </li>
             <li>
               <a href="#" className="nav-link px-2 text-white">
-                Pricing
+                Community
               </a>
             </li>
             <li>
