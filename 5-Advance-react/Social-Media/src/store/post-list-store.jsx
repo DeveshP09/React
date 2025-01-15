@@ -13,7 +13,7 @@ const postListReducer = (currPostList, action) => {
     if(action.type === "DELETE_POST"){
       newPostList = currPostList.filter((post) => post.id !== action.payload.postId)
     }
-    else if(action.type === "ADD_INITIAL_POST"){
+    else if(action.type === "ADD_INITIAL_POST"){     // will get posts from dummy API
       newPostList = action.payload.posts
     }
     else if(action.type === "ADD_POST"){
