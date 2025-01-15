@@ -7,7 +7,7 @@ const PostList = () => {
   const { postList, addInitialPosts } = useContext(PostListData);
 
   useEffect(() => {
-    fetch("https://dummyjson.com/posts")                 // featching dummy API using useEffect hook
+    fetch("https://dummyjson.com/posts")                 // fetching dummy API using useEffect hook
       .then((res) => res.json())
       .then((data) => {
         addInitialPosts(data.posts);
