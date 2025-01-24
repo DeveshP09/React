@@ -12,7 +12,7 @@ const PostList = () => {
     .then(data => {
       addInitialPosts(data.posts)
     });
-  } ,[])
+  } ,[])  
 
 
   return (
