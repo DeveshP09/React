@@ -4,8 +4,8 @@ const INITIAL_VALUE = {
 counter : 0 ,
 };
 
-const reducer = (store = INITIAL_VALUE, action) => {
-
+const reducer = (store = INITIAL_VALUE, action) => {     
+     //Action is processed by the reducer
     let newStore = store;
     if(action.type === 'Increment'){
         newStore = {counter :store.counter + 1};
@@ -24,6 +24,6 @@ const subscriber = () => {
 }
 
 store.subscribe(subscriber);
-store.dispatch({type : 'Increment'});
+store.dispatch({type : 'Increment'});      //dispatch action
 store.dispatch({type : 'Increment'});
 store.dispatch({type : 'Addition' ,payload : {number : 8}});
