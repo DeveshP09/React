@@ -2,21 +2,27 @@ import {createStore} from "redux";
 
 const INITIAL_VALUE = {
     counter :0,
+    privacy : false,
 };
 
 const counterReducer = (store = INITIAL_VALUE ,action) => {
     
     if(action.type === 'INCREMENT'){
-       return{counter: store.counter + 1};
+       //return{counter: store.counter + 1, privacy: store.privacy};
+       return{...store, counter: store.counter + 1};
+
     }
     else if(action.type === 'DECREMENT'){
-       return{counter: store.counter - 1};
+       return{...store, counter: store.counter - 1};
     }
     else if(action.type === 'ADD'){
-        return{counter: store.counter + Number(action.payload.num)};  //to convert string value to number
+        return{...store, counter: store.counter + Number(action.payload.num)};  //to convert string value to number
     }
     else if(action.type === 'SUBSTRACT'){
-        return{counter: store.counter - Number(action.payload.num)};  //to convert string value to number
+        return{...store, counter: store.counter - Number(action.payload.num)};  //to convert string value to number
+    }
+    else if(action.type === 'PRIVACY_TOGGLE'){
+        return{...store ,privacy: !store.privacy };  //...store to persist the value of counter even if the counter is private
     }
     
     return store;
