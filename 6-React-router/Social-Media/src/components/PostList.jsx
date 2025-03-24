@@ -3,24 +3,22 @@ import Post from "./Post";
 import { PostList as PostListData } from "../store/post-list-store";
 import WelcomeMessage from "./WelcomeMessage";
 
-
 const PostList = () => {
-  const { postList ,addInitialPosts } = useContext(PostListData);
+  const { postList, addInitialPosts } = useContext(PostListData);
 
   useEffect(() => {
-    fetch('https://dummyjson.com/posts')       // dummy API
-    .then(res => res.json())
-    .then(data => {
-      addInitialPosts(data.posts)
-    });
-  } ,[])  
-
+    fetch("https://dummyjson.com/posts") // dummy API
+      .then((res) => res.json())
+      .then((data) => {
+        addInitialPosts(data.posts);
+      });
+  }, []);
 
   return (
     <>
-      {postList.length == 0 && <WelcomeMessage/>}
+      {postList.length == 0 && <WelcomeMessage />}
       {postList.map((post) => (
-        <Post key={post.id} post={post} />
+        <Post key={post.id} post={post} /> //passing post as a prop
       ))}
     </>
   );
