@@ -7,8 +7,8 @@ const Home = () => {
   return (
     <main>
       <div className="items-container" >
-        {items.map((item,index) => (
-          <HomeItem key={item.id || index} item={item} />
+        {items.map((item) => (
+          <HomeItem key={item.id } item={item} />
         ))}
       </div>
     </main>

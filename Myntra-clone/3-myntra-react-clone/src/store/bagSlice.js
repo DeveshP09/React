@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-const itemsSlice = createSlice({
-  name: "items",
+const bagSlice = createSlice({
+  name: "bag",
   initialState: [],
   reducers: {
     addInitialItems: (state, action) => {
@@ -11,8 +11,8 @@ const itemsSlice = createSlice({
   },
 });
 
-export const itemsActions = itemsSlice.actions;
+export const bagActions = bagSlice.actions;
 
-export default itemsSlice;
+export default bagSlice;
 
 

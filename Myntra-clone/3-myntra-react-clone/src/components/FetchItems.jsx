@@ -23,9 +23,9 @@ const FetchItems = () => {
       });
 
     return () => {
-      // controller.abort();
+      controller.abort();
     };
-  }, [fetchStatus]);
+  }, [fetchStatus,]);
 
   return <></>;
 };
